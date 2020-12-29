@@ -53,7 +53,7 @@ TODO
     -   [Official implementation][stylegan2-ada-official-repository]
     -   [Application to Steam banners][stylegan2-ada-applied-to-steam-banners]
 -   "Lightweight-GAN":
-    -   [Anonymous. *Towards Faster and Stabilized GAN Training for High-fidelity Few-shot Image Synthesis*. ICLR 2021.][lightweight-gan-paper]
+    -   [N/A. *Towards Faster and Stabilized GAN Training for High-fidelity Few-shot Image Synthesis*. ICLR 2021.][lightweight-gan-paper]
     -   [Unofficial implementation][lightweight-gan-unofficial-repository]
     -   [Application to Steam banners][lightweight-gan-applied-to-steam-banners]    
     
