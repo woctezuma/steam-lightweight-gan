@@ -65,7 +65,7 @@ TODO
 
 [colab-website]: <https://colab.research.google.com/>
 [colab-badge]: <https://colab.research.google.com/assets/colab-badge.svg>
-[Lightweight_GAN_training]: <https://colab.research.google.com/github/woctezuma/steam-lightweight-gan/blob/main/Lightweight_GAN_training.ipynb>
+[Lightweight_GAN_training]: <https://colab.research.google.com/github/woctezuma/steam-lightweight-gan/blob/main/Steam_Lightweight_GAN.ipynb>
 
 [dcgan-paper]: <https://arxiv.org/abs/1511.06434>
 [stylegan1-paper]: <https://arxiv.org/abs/1812.04948>
