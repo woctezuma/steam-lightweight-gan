@@ -18,17 +18,42 @@ The banners were selected to contain exactly one face, based on the two face det
 
 ## Training parameters
 
-TODO
+Following the remark for datasets with ~ 2k images in the paper for [StyleGAN2-ADA][stylegan2-ada-paper]:
+-   I have settled for a fixed augmentation probability equal to 0.4,
+-   the augmentation was initially constrained to `translation`.
+
+After 27k iterations, the discriminator (D) loss was much lower than the generator (G) loss, and close to zero, so the `color` augmentation was added.
+Caveat: in the StyleGAN2-ADA paper, it is mentioned that "color" was only slightly beneficial.
+
+After 54k iterations, for the same reason, the `cutout` augmentation was added.
+Caveat: in the StyleGAN2-ADA paper, it is mentioned that "cutout" was detrimental to the results.
+
+![Augmentation: types][augmentation_types]
+
+![Augmentation: strength][augmentation_strength]
+
+![Augmentation: illustration][augmentation_illustration]
+
+With Tesla T4 (with 16 GB VRAM), the mini-batch size could be set to 64 images.
+Because the mini-batch size is greater than 32, gradient accumulation is not needed.
+
+[Automatic Mixed Precision][nvidia-amp-doc] is toggled ON.
 
 ## Results
 
 ### Training time
 
-TODO
+Depending on the GPU provided by Google Colab, the total training may vary wildly.
+
+With Tesla T4, an iteration requires 1.6 second.
+For 150k iterations, the total training time is expected to be slightly less than 70 hours.
+
+With Tesla K80, an iteration will require much longer time.
+Moreover, you would have to decrease the mini-batch size to 32, and maybe rely on gradient accumulation.
 
 ### Model checkpoints
 
-TODO
+During training, checkpoints of the model are saved every thousand epochs, and shared on [Google Drive][gdrive-lightweight-gan-checkpoints].
 
 ### Generated Steam banners
 
@@ -61,11 +86,17 @@ TODO
 
 [cover-illustration]: <https://raw.githubusercontent.com/wiki/woctezuma/steam-lightweight-gan/img/generated_banners.jpg>
 
+[augmentation_illustration]: <https://raw.githubusercontent.com/wiki/woctezuma/steam-lightweight-gan/img/stylegan2-ada/augmentation_illustration.jpg>
+[augmentation_strength]: <https://raw.githubusercontent.com/wiki/woctezuma/steam-lightweight-gan/img/stylegan2-ada/augmentation_strength.jpg>
+[augmentation_types]: <https://raw.githubusercontent.com/wiki/woctezuma/steam-lightweight-gan/img/stylegan2-ada/augmentation_types.jpg>
+
 [steam-oneface-section]: <https://github.com/woctezuma/steam-filtered-image-data#steam-oneface-dataset>
 
 [colab-website]: <https://colab.research.google.com/>
 [colab-badge]: <https://colab.research.google.com/assets/colab-badge.svg>
 [Lightweight_GAN_training]: <https://colab.research.google.com/github/woctezuma/steam-lightweight-gan/blob/main/Steam_Lightweight_GAN.ipynb>
+
+[gdrive-lightweight-gan-checkpoints]: <https://drive.google.com/drive/folders/1JmmAgLPhyAiQ4OC4DvbWc5-zUp7haB0J>
 
 [dcgan-paper]: <https://arxiv.org/abs/1511.06434>
 [stylegan1-paper]: <https://arxiv.org/abs/1812.04948>
@@ -84,3 +115,5 @@ TODO
 [stylegan2-applied-to-steam-banners]: <https://github.com/woctezuma/steam-stylegan2>
 [stylegan2-ada-applied-to-steam-banners]: <https://github.com/woctezuma/steam-stylegan2-ada>
 [lightweight-gan-applied-to-steam-banners]: <https://github.com/woctezuma/steam-lightweight-gan>
+
+[nvidia-amp-doc]: <https://developer.nvidia.com/automatic-mixed-precision>
