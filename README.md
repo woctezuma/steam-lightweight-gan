@@ -2,7 +2,7 @@
 
 ![Examples of generated Steam banners][cover-illustration]
 
-The goal of this [Google Colab][colab-website] notebook is to capture the distribution of Steam banners and sample with a "lightweight GAN".
+The goal of this [Colab][colab-website] notebook is to capture the distribution of Steam banners and sample with a "lightweight GAN".
 
 ## Usage
 
@@ -53,7 +53,7 @@ TODO
     -   [Official implementation][stylegan2-ada-official-repository]
     -   [Application to Steam banners][stylegan2-ada-applied-to-steam-banners]
 -   "Lightweight-GAN":
-    -   [Anonymous. *Towards Faster and Stabilized GAN Training for High-fidelity Few-shot Image Synthesis*. ICLR 2021 (pending).][lightweight-gan-paper]
+    -   [Anonymous. *Towards Faster and Stabilized GAN Training for High-fidelity Few-shot Image Synthesis*. ICLR 2021.][lightweight-gan-paper]
     -   [Unofficial implementation][lightweight-gan-unofficial-repository]
     -   [Application to Steam banners][lightweight-gan-applied-to-steam-banners]    
     
